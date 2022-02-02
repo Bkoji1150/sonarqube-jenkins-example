@@ -1,6 +1,7 @@
 FROM jenkins/jenkins:2.319.1-jdk11
 
 COPY docker-resources/plugins.txt /usr/share/jenkins/ref/plugins.txt
+COPY docker-resources/install.sh /usr/share/jenkins/ref/install.sh
 RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
 
 COPY docker-resources/jenkins.yaml /usr/share/jenkins/ref/jenkins.yaml
